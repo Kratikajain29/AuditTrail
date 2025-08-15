@@ -1,0 +1,31 @@
+{
+  "createAuditTrail": [
+    {
+      "beforeObject": null,
+      "afterObject": { "id": 1, "name": "John Doe", "email": "john@example.com" },
+      "entityName": "User",
+      "userId": "admin123",
+      "action": "Created"
+    },
+    {
+      "beforeObject": { "id": 1, "name": "John Doe", "email": "john@example.com" },
+      "afterObject": { "id": 1, "name": "John Smith", "email": "john@example.com" },
+      "entityName": "User",
+      "userId": "admin123",
+      "action": "Updated"
+    },
+    {
+      "beforeObject": { "id": 1, "name": "John Smith", "email": "john@example.com" },
+      "afterObject": null,
+      "entityName": "User",
+      "userId": "admin123",
+      "action": "Deleted"
+    }
+  ],
+  "getAuditTrails": [
+    "GET /api/v1.0/audittrail/User",
+    "GET /api/v1.0/audittrail/User?userId=admin123",
+    "GET /api/v1.0/audittrail/User?fromDate=2024-01-01&toDate=2024-12-31"
+  ],
+  "healthCheck": "GET /api/v1.0/audittrail/health"
+} 
